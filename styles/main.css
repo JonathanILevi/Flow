@@ -1,0 +1,74 @@
+
+* {
+	margin	:	0	;
+	padding	:	0	;
+}
+
+
+.workspace {
+	box-sizing	:	border-box	;
+	border	:	solid	;
+}
+
+.block {
+	border	:	solid thin	;
+	
+	position	:	absolute	;
+				
+	display	:	inline-flex	;
+	flex-direction	:	column	;
+	background	:	#eeee00	;
+				
+	min-width	:	32px	;
+	min-height	:	32px	;
+}
+
+.block.-selected {
+	background	:	#00ee00	;
+}
+
+.block.-editing {
+	background	:	#ee0000	;
+}
+
+.block-header {
+	text-align	:	center	;
+}
+.block.-editing .block-header {
+	background	:	white	;
+}
+
+.block-content {
+	display	:	flex	;
+	flex-direction	:	row	;
+}
+.block-nodeColumn {
+	width	:	16px;
+}
+.block.-editing .block-inputArea {
+	background	:	white	;
+}
+.block-inputArea {
+	line-height	:	16px	;
+	margin	:	2px 0px	;
+}
+.block-inputArea-left {
+	margin-right	:	2px	;
+	padding-left	:	2px	;
+}
+.block-inputArea-right {
+	margin-left	:	2px	;
+	padding-right	:	2px	;
+}
+.block-padding {
+	flex	:	1	;
+}
+
+.block-node {
+	background	:	blue	;
+	height	:	16px	;
+	width	:	16px	;
+}
+.block-node.-selected {
+	background	:	#00ee00	;
+}
