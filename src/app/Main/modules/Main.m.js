@@ -319,3 +319,11 @@ window.addEventListener("keydown", ev => {
 		ev.preventDefault();
 	}
 });
+
+workspace.div(Div.on("pointerdown", ev => {
+	console.log(ev);
+	workspace.appendChild(new Code({
+		x:Math.round(ev.clientX/16)*16,
+		y:Math.round(ev.clientY/16)*16,
+	}));
+}));
