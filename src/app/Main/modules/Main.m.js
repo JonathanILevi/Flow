@@ -107,7 +107,7 @@ class Call extends Block {
 		////	div("div","right",),
 		////));
 		this.inner.div(
-			div("input","name", el=>this.name=el, {placeholder:(". . call block . ."), value:data?.name, }),
+			div("input","name", el=>this.name=el, {placeholder:(". . call block . ."), value:data?.name??"", }),
 			div("div", "connections",
 				div("div","left", el=>this.left=el,
 					div("div", "connectionGap",),
@@ -177,7 +177,7 @@ class Code extends Block {
 				div("div", "connectionGap",),
 			),
 			div("div", "center",
-				div("input","name", el=>this.name=el, {placeholder:(". . code block . ."), value:data?.name, }),
+				div("input","name", el=>this.name=el, {placeholder:(". . code block . ."), value:data?.name??"", }),
 				div("div","code", "language-js", el=>{
 					this.codeJar = CodeJar(el, editor=>Prism.highlightElement(editor), {});
 				}),
