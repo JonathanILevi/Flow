@@ -9,7 +9,7 @@ import socketserver
 import re
 from pathlib import Path
 
-HOST = ('0.0.0.0', 8000)
+
 pattern = re.compile('.png|.jpg|.jpeg|.js|.css|.ico|.gif|.svg', re.IGNORECASE)
 
 
@@ -25,5 +25,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         return http.server.SimpleHTTPRequestHandler.do_GET(self)
 
 
-httpd = socketserver.TCPServer(HOST, Handler)
-httpd.serve_forever()
+def host(port):
+    HOST = ('0.0.0.0', port)
+    httpd = socketserver.TCPServer(HOST, Handler)
+    print("Hosted on port "+str(p)+".")
+    httpd.serve_forever()
+
+for p in range(8000,8010):
+    pass
+    try:
+        host(p)
+        break
+    except OSError:
+        print("Failed to host on port "+str(p)+".")
+        continue
+    except KeyboardInterrupt:
+        print("Done hosting");
+        break;
+
+
+

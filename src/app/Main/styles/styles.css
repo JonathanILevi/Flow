@@ -1,0 +1,189 @@
+
+html {
+	background: url("../images/bg.png") repeat;
+	min-width: 100vw;
+	min-height: 100vh;
+}
+body {
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+div {
+	min-width: 16px;
+	min-height: 16px;
+}
+
+.block {
+	width: 256px;
+	height: 256px;
+	position: absolute;
+	background: #000a;
+	border: solid #aaa 2px;
+	border-radius: 4px;
+	color: #ccc;
+	transition: background 0.25s;
+}
+.block:hover {
+	background: #000c;
+}
+.block.-code {
+	width: 512px;
+}
+
+.block {
+	cursor: move;
+}
+.block .-inner {
+	width: 248px;
+	height: 248px;
+	margin: 2px;
+	cursor: auto;
+}
+.block.-code .-inner {
+	width: 504px;
+}
+
+.block input {
+	background: none;
+	border: none;
+	color: inherit;
+	font: inherit
+}
+.block .name {
+	border-bottom: solid #aaa 2px;
+	margin: 0 8px;
+	text-align: center;
+	height: 26px;
+}
+
+.block.-call .-inner {
+	display: flex;
+	flex-direction: column;
+}
+.block.-call .connections {
+	display: flex;
+	flex-direction: row;
+}
+
+.block.-code .-inner {
+	display: flex;
+	flex-direction: row;
+}
+.block.-code .center{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.block.-code .code {
+	flex: 1;
+}
+
+
+.block.-call .left, .block.-call .right {
+	flex-grow: 1;
+}
+.left, .right {
+	min-width: 32px;
+	display: flex;
+	flex-direction: column;
+}
+.right {
+	text-align: right;
+}
+
+.connection {
+	display:flex;
+	align-items: center;
+	height: 28px;
+}
+.node {
+	width: 12px; height: 12px;
+	background: #aaa;
+	border-radius: 12px;
+	margin: 0 4px;
+}
+.connectionGap {
+	min-height: 0;
+	height: 4px;
+	background: #0000;
+	transition: background 0.25s;
+}
+.connectionGap:hover {
+	background: #cccf;
+}
+.label {
+	flex-grow: 1;
+}
+.left .label {
+	padding-right: 6px;
+}
+.right .label {
+	padding-left: 6px;
+}
+
+
+.resize {
+	min-width:0;min-height:0;
+	width: 8px;
+	height: 8px;
+	border-radius: 2px;
+	position: absolute;
+	transition: background 0.25s;
+}
+.resize:not(.-d) {
+	background: #aaa8;
+}
+.resize:hover {
+	background: #ccc;
+}
+.resize.-right {
+	right: -5px;
+	top: 50%;
+	margin-top: -4px;
+	cursor: e-resize;
+}
+.resize.-left {
+	left: -5px;
+	top: 50%;
+	margin-top: -4px;
+	cursor: w-resize;
+}
+.resize.-bottom {
+	bottom: -5px;
+	left: 50%;
+	margin-left: -4px;
+	cursor: s-resize;
+}
+.resize.-top {
+	top: -5px;
+	left: 50%;
+	margin-left: -4px;
+	cursor: n-resize;
+}
+.resize.-bottomright {
+	bottom: -5px;
+	right: -5px;
+	cursor: se-resize;
+}
+.resize.-topleft {
+	top: -5px;
+	left: -5px;
+	cursor: nw-resize;
+}
+.resize.-topright {
+	top: -5px;
+	right: -5px;
+	cursor: ne-resize;
+}
+.resize.-bottomleft {
+	bottom: -5px;
+	left: -5px;
+	cursor: sw-resize;
+}
+
+
+.code {
+	resize: none !important;
+}
